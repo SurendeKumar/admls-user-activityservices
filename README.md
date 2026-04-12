@@ -1,0 +1,1 @@
+# admls-user-activity-service
