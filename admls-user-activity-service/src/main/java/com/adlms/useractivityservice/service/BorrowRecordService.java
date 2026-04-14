@@ -73,4 +73,14 @@ public class BorrowRecordService {
 
         borrowRecordRepository.delete(record);
     }
+    
+    
+    // find document by id --> find document for borrow record
+    public List<BorrowRecordDTOs.BorrowRecordResponse> getByDocumentId(Long documentId) {
+        return borrowRecordRepository.findByDocumentId(documentId)
+                .stream()
+                .map(BorrowRecordMapper::toResponse)
+                .collect(Collectors.toList());
+    }
+    
 }
