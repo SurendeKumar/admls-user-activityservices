@@ -45,4 +45,10 @@ public class BorrowRecordController {
     ) {
         service.delete(userId, recordId);
     }
+    
+    
+    @GetMapping("/documents/{documentId}/borrow-records")
+    public List<BorrowRecordDTOs.BorrowRecordResponse> getByDocument(@PathVariable Long documentId) {
+        return service.getByDocumentId(documentId);
+    }
 }
